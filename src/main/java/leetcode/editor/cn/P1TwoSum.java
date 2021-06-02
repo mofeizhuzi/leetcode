@@ -22,29 +22,40 @@ import java.util.HashMap;
 import java.util.Map;
 
 //Java：两数之和
-public class P1TwoSum{
+public class P1TwoSum {
+    static int i;
+    final float i3 = 3.14f;
+
     public static void main(String[] args) {
-        Solution solution = new P1TwoSum().new Solution();
-        // TO TEST
+        boolean b = true ? false : true == true ? false : true;
+        System.out.println(b);
+
+        long temp = (int) 3.9;
+        System.out.println(temp %= 2);
+
+        int a[] = new int[10];
+        System.out.println(a[9]);
+
+        int aaa = Integer.parseInt("2131231a");
     }
 
     /**
      * amos zhu
      */
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        Map map = new HashMap(nums.length);
-        for (int i = 0; i < nums.length; i++) {
-            int left = target-nums[i];
-            if (map.containsKey(left)) {
-                return new int[]{i, (int)map.get(left)};
+    class Solution {
+        public int[] twoSum(int[] nums, int target) {
+            Map map = new HashMap(nums.length);
+            for (int i = 0; i < nums.length; i++) {
+                int left = target - nums[i];
+                if (map.containsKey(left)) {
+                    return new int[]{i, (int) map.get(left)};
+                }
+                map.put(nums[i], i);
             }
-            map.put(nums[i], i);
+            return null;
         }
-        return null;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
